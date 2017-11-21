@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{width: 500px;height: 500px;}
+    </style>
+</head>
+<body>
+
+    <div id="div"></div>    
+
+</body>
+<script>
+    var div = document.getElementById('div');
+    function handle(res){
+        console.log(res);
+        div.innerHTML = `
+                                        <h3>你所在的位置:</h3>
+                                        <p>经度:${res.latitude}</p>
+                                        <p>纬度:${res.longitude}</p>
+                                        <p>城市:${res.region_name}</p>
+                                        `
+    }
+   
+</script>
+
+<script src= "http://freegeoip.net/json/?callback=handle">
+    
+</script>
+
+</html>
